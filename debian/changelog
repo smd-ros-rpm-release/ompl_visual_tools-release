@@ -1,0 +1,11 @@
+ros-indigo-ompl-visual-tools (2.0.1-0trusty) trusty; urgency=high
+
+  * Updated README
+  * Removed lightning dependencies
+  * Renamed ompl_rviz_viewer to ompl_visual_tools
+  * Initial
+  * Contributors: Dave Coleman
+
+ -- Dave Coleman <davetcoleman@gmail.com>  Wed, 06 Aug 2014 15:00:00 -0000
+
+
