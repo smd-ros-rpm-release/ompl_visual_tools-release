@@ -64,6 +64,8 @@ namespace og = ompl::geometric;
 namespace ompl_visual_tools
 {
 
+static const std::string BASE_FRAME = "/world";
+
 /**
  * \brief SimpleSetup demo class
  */
@@ -176,8 +178,9 @@ public:
     si_->setStateValidityCheckingResolution(0.001);
 
     // Setup the optimization objective to use the 2d cost map
+    // NEWER VERSION OF OMPL
     //simple_setup_->setOptimizationObjective(cost_map_);
-    simple_setup_->setOptimizationObjective(path_length_objective_);
+    //simple_setup_->setOptimizationObjective(path_length_objective_);
 
     // Setup -----------------------------------------------------------
 
