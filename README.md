@@ -14,7 +14,6 @@ streamlined for considering costs and experience-based planning.
 
 <img align="right" src="https://raw.githubusercontent.com/davetcoleman/ompl_visual_tools/hydro-devel/screenshots/ompl_visual_tools.png" />
 .
-.
 
 ## How to Build
 
@@ -71,8 +70,8 @@ To view the cost map in Rviz:
 
 To view the start and goal location:
 ```
-    visual_tools_->publishState(start, moveit_visual_tools::GREEN,  moveit_visual_tools::XLARGE, "plan_start_goal");
-    visual_tools_->publishState(goal,  moveit_visual_tools::ORANGE, moveit_visual_tools::XLARGE, "plan_start_goal");
+    visual_tools_->publishState(start, rviz_visual_tools::GREEN,  rviz_visual_tools::XLARGE, "plan_start_goal");
+    visual_tools_->publishState(goal,  rviz_visual_tools::ORANGE, rviz_visual_tools::XLARGE, "plan_start_goal");
 ```
 
 To view the solution path:
@@ -81,13 +80,13 @@ To view the solution path:
       simple_setup_->getSolutionPath().interpolate();
       
       // Show path
-      visual_tools_->publishPath( simple_setup_->getSolutionPath(), moveit_visual_tools::GREEN, 1.0, "final_solution");
+      visual_tools_->publishPath( simple_setup_->getSolutionPath(), rviz_visual_tools::GREEN, 1.0, "final_solution");
 ```
 
 And to see more of what the planner was doing:
 ```
       // Visualize the explored space
-      visual_tools_->publishGraph(planner_data, moveit_visual_tools::ORANGE, 0.2, "tree");
+      visual_tools_->publishGraph(planner_data, rviz_visual_tools::ORANGE, 0.2, "tree");
  
       // Visualize the sample locations
       visual_tools_->publishSamples(planner_data);
@@ -114,7 +113,7 @@ First, set the state space that MoveIt! has chosen for your robot in OMPL:
 Then you can publish the paths of various tips on a robot, as planned in OMPL:
 ```
     std::vector<ompl::base::PlannerDataPtr> paths;
-    simple_setup.getAllPaths(paths);
+    simple_setup.getAllPlannerDatas(paths);
 
     // Get tip links for this setup
     std::vector<const robot_model::LinkModel*> tips;
